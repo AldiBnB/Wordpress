@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Agencia</title>
+  <title>AldiBnb</title>
   <?php wp_head() ?>
 
 </head>
 <body class="home">
 <header class="nav">
   <a href="index.html" class="nav__logo" title="Page d'accueil">
-    <img src="logo.5b7fbf6d.svg" alt="">
+    <img src="" alt="">
   </a>
-  <ul class="nav__menu">
-    <li><a href="#">Acheter</a></li>
-    <li><a href="listing.html" aria-current="page">Louer</a></li>
-    <li><a href="news.html">Actualité</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-  <button class="nav__burger">
-    <span></span>
-  </button>
+  <div class="nav_menu">
+    <a href="">Hébergements</a>
+    <a href="" aria-current="page">Devenez hote</a>
+    <a href="">Connexion</a>
+    <a href="">Contact</a>
+</div>
+
 </header>
+
+<div class="container">

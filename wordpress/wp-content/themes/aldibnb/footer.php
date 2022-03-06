@@ -1,3 +1,5 @@
+</div>
+    
 <footer class="footer container">
   <div class="footer__col">
     <div class="footer__title">Pages</div>
@@ -26,19 +28,19 @@
   <div class="footer__col">
     <div class="footer__credits">© 2020 Grafikart Real Estate, Inc.</div>
     <div class="footer__social">
-      <a href="#" title="Nous suivre sur twitter">
+      <a href="" title="Nous suivre sur twitter">
         <svg class="icon">
-          <use xlink:href="sprite.14d9fd56.svg#twitter"></use>
+          <use xlink:href="img/sprite.14d9fd56.svg#twitter"></use>
         </svg>
       </a>
-      <a href="#" title="Nous suivre sur Facebook">
+      <a href="" title="Nous suivre sur Facebook">
         <svg class="icon">
-          <use xlink:href="sprite.14d9fd56.svg#facebook"></use>
+          <use xlink:href="img/sprite.14d9fd56.svg#facebook"></use>
         </svg>
       </a>
-      <a href="#" title="Nous suivre sur instagram">
+      <a href="" title="Nous suivre sur instagram">
         <svg class="icon">
-          <use xlink:href="sprite.14d9fd56.svg#instagram"></use>
+          <use xlink:href="img/sprite.14d9fd56.svg#instagram"></use>
         </svg></a>
     </div>
   </div>
