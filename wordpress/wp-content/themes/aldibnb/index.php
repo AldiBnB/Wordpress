@@ -27,21 +27,15 @@
     <label for="date-départ">Voyageurs</label>
       <input type="number" class="form-control"  placeholder="Qui ?">
     </div>
-    <button type="submit" class="btn btn-filled">Rechercher</button>
+    <button type="submit"">Rechercher</button>
   </form>
-</div>
+
 
 
 <!-- Caroussel -->
-      </div>
-      <div class="highlighted highlighted--home">
-        <img src="https://i.picsum.photos/id/234/790/728.jpg" alt="">
-        <div class="highlighted__body">
-          <div class="highlighted__title">Maison 4 pièce(s)</div>
-          <div class="highlighted__price">178 200€</div>
-          <div class="highlighted__location">34 000 MONTPELLIER</div>
-          <div class="highlighted__space">80m²</div>
-        </div>
+
+      <div class="caroussel">
+    
       </div>
     </section>
 
