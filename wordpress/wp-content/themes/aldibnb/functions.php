@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -22,3 +23,5 @@ function Bootstrap()
 
 add_action('after_setup_theme', 'AldiBnbSetupTheme');
 add_action('wp_enqueue_scripts', 'Bootstrap');
+
+?>
