@@ -5,7 +5,7 @@
         <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     </head>
     <body>
-        <form action="login.php" method="post">
+        <form action="wp-login.php" method="post">
             <h2>Connexion</h2>
             <?php if (isset($GET['error'])) { ?>
                 <p class="error"><?php echo $_GET['error'];?></p>
