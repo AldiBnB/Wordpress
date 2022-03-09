@@ -12,6 +12,7 @@ if (is_user_logged_in()) {
 <!doctype html>
 <html>
 
+
 <head>
     <title>Connexion</title>
     <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
@@ -20,5 +21,6 @@ if (is_user_logged_in()) {
 <body>
     <?php wp_login_form(); ?>
 </body>
+
 
 </html>

@@ -17,14 +17,14 @@ if (isset($_POST['register'])) {
     // check if username already exist
     $user_id = username_exists($username);
     if (!$user_id and email_exists($email) == false) {
-        // create user
+
         $user_id = wp_create_user($username, $password, $email);
-        // set role
+
         wp_update_user(array(
             'ID' => $user_id,
             'role' => $role
         ));
-        // login user
+
         wp_set_current_user($user_id, $username);
         wp_set_auth_cookie($user_id);
         // redirect to home
