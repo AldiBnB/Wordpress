@@ -2,17 +2,7 @@
 
 <!-- enctype="multipart/form-data" -->
 
-<form action="wp-login.php" method="post">
-    <h2>Connexion</h2>
-    <?php if (isset($GET['error'])) { ?>
-        <p class="error"><?php echo $_GET['error']; ?></p>
-    <?php } ?>
-    <label>Pseudo</label>
-    <input type="text" name="log" id="user_login" placeholder="Pseudo"><br>
-    <label>Mot de passe</label>
-    <input type="password" name="pwd" id="user_pass" placeholder="Mot de passe"><br>
-    <button type="submit">Se connecter</button>
-</form>
+
 <?php if (have_posts()) : ?>
     <div class="card-group">
         <?php while (have_posts()) : ?>
