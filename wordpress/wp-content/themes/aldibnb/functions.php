@@ -15,16 +15,9 @@ function AldiBnbSetupTheme()
 
 
 
-function Bootstrap()
-{
-    wp_enqueue_style('bootstrap_css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
-    wp_enqueue_script("bootstrap_js", "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js", [], false, true);
-}
-
 $action = empty($_REQUEST['action']) ? '' : $_REQUEST['action'];
 
 add_action('after_setup_theme', 'AldiBnbSetupTheme');
-add_action('wp_enqueue_scripts', 'Bootstrap');
 add_action('admin_post_post_article', function () {
     $post_args = array(
         'post_content' => $_POST['post_content'],
