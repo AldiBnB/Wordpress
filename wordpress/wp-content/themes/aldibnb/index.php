@@ -2,7 +2,6 @@
 
 <!-- enctype="multipart/form-data" -->
 
-
 <?php if (have_posts()) : ?>
     <div class="card-group">
         <?php while (have_posts()) : ?>
