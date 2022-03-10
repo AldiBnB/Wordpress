@@ -26,8 +26,14 @@ add_action('admin_post_post_article', function () {
         'post_status' => 'private',
         'comment_status' => 'open',
         'post_author' => get_current_user_id(),
+        // add location info to post with $_POST['post_location']
+
         'meta_input' => array(
-            'auteur' => $_POST['auteur']
+            'auteur' => $_POST['auteur'],
+            'location' => $_POST['post_location'],
+            'date debut' => $_POST['post_start_date'],
+            'date fin' => $_POST['post_end_date']
+
         )
     );
     // Maintenant on poste le truc

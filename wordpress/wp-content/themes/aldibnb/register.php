@@ -44,6 +44,8 @@ if (isset($_POST['register'])) {
 </head>
 
 <body>
+
+    <?php get_header(); ?>
     <!-- Create a register form -->
     <form action="<?php echo esc_url(site_url('/register')); ?>" method="post">
         <div class="form-group">

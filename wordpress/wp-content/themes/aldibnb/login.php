@@ -18,7 +18,9 @@ if (is_user_logged_in()) {
     <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 </head>
 
+
 <body>
+    <?php get_header(); ?>
     <?php wp_login_form(); ?>
 </body>
 

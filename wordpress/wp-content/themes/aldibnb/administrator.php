@@ -8,7 +8,6 @@ if (!current_user_can('administrator')) {
     wp_redirect(home_url('/'));
     exit();
 }
-get_header();
 ?>
 <!-- display all private post with a button to view, an another to publish them -->
 <!-- style set image fix -->
@@ -79,34 +78,37 @@ get_header();
         color: white;
     }
 </style>
-<div class='contenu'>
-    <?php
-    $args = array(
-        'post_type' => 'post',
-        'post_status' => 'private',
-        'posts_per_page' => -1,
-        'orderby' => 'date',
-        'order' => 'DESC'
-    );
-    $query = new WP_Query($args);
-    if ($query->have_posts()) :
-        while ($query->have_posts()) :
-            $query->the_post();
-    ?>
-            <div>
-                <img src="<?php the_post_thumbnail_url(); ?>" alt="...">
 
+<body>
+    <?php get_header(); ?>
+    <div class='contenu'>
+        <?php
+        $args = array(
+            'post_type' => 'post',
+            'post_status' => 'private',
+            'posts_per_page' => -1,
+            'orderby' => 'date',
+            'order' => 'DESC'
+        );
+        $query = new WP_Query($args);
+        if ($query->have_posts()) :
+            while ($query->have_posts()) :
+                $query->the_post();
+        ?>
                 <div>
-                    <h5 class="card-title"><?php the_title(); ?></h5>
-                    <a href="<?php the_permalink(); ?>">Voir</a>
-                    <a href="<?php echo admin_url('admin-post.php'); ?>?action=publish_post&post_id=<?php the_ID(); ?>">Publier</a>
-                    <a href="<?php echo get_delete_post_link(); ?>">Supprimer</a>
-                    <!-- rendre -->
+                    <img src="<?php the_post_thumbnail_url(); ?>" alt="...">
+
+                    <div>
+                        <h5 class="card-title"><?php the_title(); ?></h5>
+                        <a href="<?php the_permalink(); ?>">Voir</a>
+                        <a href="<?php echo admin_url('admin-post.php'); ?>?action=publish_post&post_id=<?php the_ID(); ?>">Publier</a>
+                        <a href="<?php echo get_delete_post_link(); ?>">Supprimer</a>
+                        <!-- rendre -->
+                    </div>
                 </div>
-            </div>
-    <?php
-        endwhile;
-    endif;
-    ?>
-</div>
-<?php get_footer(); ?>
+        <?php
+            endwhile;
+        endif;
+        ?>
+    </div>
+</body>
