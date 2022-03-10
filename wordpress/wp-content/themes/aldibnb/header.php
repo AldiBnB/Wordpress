@@ -7,6 +7,8 @@
   <title>AldiBnb</title>
   <?php wp_head() ?>
 
+
+
 </head>
 <body class="home">
 <header class="nav">
@@ -15,7 +17,7 @@
   </a>
   <div class="nav_menu">
     <a href="">Hébergements</a>
-    <a href="" aria-current="page">Devenez hote</a>
+    <a href="" aria-current="page">Devenez hôte</a>
     <a href="">Connexion</a>
     <a href="">Contact</a>
 </div>

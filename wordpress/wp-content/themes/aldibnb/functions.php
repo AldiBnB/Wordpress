@@ -24,4 +24,8 @@ function Bootstrap()
 add_action('after_setup_theme', 'AldiBnbSetupTheme');
 add_action('wp_enqueue_scripts', 'Bootstrap');
 
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style('main', get_template_directory_uri() . '/assets/style.css');
+});
+
 ?>

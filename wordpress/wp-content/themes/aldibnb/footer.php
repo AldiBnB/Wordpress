@@ -28,20 +28,16 @@
   <div class="footer__col">
     <div class="footer__credits">© 2020 Grafikart Real Estate, Inc.</div>
     <div class="footer__social">
-      <a href="" title="Nous suivre sur twitter">
-        <svg class="icon">
-          <use xlink:href="img/sprite.14d9fd56.svg#twitter"></use>
-        </svg>
-      </a>
-      <a href="" title="Nous suivre sur Facebook">
-        <svg class="icon">
-          <use xlink:href="img/sprite.14d9fd56.svg#facebook"></use>
-        </svg>
-      </a>
-      <a href="" title="Nous suivre sur instagram">
-        <svg class="icon">
-          <use xlink:href="img/sprite.14d9fd56.svg#instagram"></use>
-        </svg></a>
+    <div class="footer__social">
+        <div class="twitter">
+            <img src="https://img.icons8.com/material/30/000000/twitter--v1.png"/>
+        </div class="instagram">
+        <div>
+            <img src="https://img.icons8.com/ios-glyphs/30/000000/facebook.png"/>
+        </div>
+        <div class="facebook">
+            <img src="https://img.icons8.com/material/30/000000/instagram-new--v1.png"/>
+        </div>
     </div>
   </div>
 </footer>
