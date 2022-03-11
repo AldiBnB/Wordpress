@@ -4,49 +4,46 @@
   <main class="sections">
     <!-- Search Form -->
     <section>
+    <div class="main_search">
 
-    <div class="container">
 
-        <h1>AldiBnb</h1>
-        <p>Retrouver tous nos biens</p>
-        <hr>
+        <div class="container">
+
+        
+            
     
+            <form class="search-form">
+                <label for="city">Destination</label><br>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="city" placeholder="Où allez vous ?"> 
+                </div>
+                <label for="date-arrivée">Arrivée</label>
+                <div class="form-group">
+                    <input type="date" class="form-control" id="budget" placeholder=" Quand ?">
+                </div>
+                <label for="date-départ">Départ</label>
+                <div class="form-group">
+                    <input type="date" class="form-control" id="budget" placeholder=" Quand ?">
+                </div>
+                <label for="date-départ">Voyageurs</label>
+                <div class="form-group">
+                    <input type="number" class="form-control"  placeholder="Qui ?">
+                </div>
+
+                <button type="submit">Rechercher</button>
+            </form>
+        <div>
+        <div class="container">
+            <div class="view-content">
 
 
+        <!-- Caroussel -->
 
-
-
-        
-
-
-
-        
-  
-        <form class="search-form">
-            <label for="city">Destination</label><br>
-            <div class="form-group">
-                <input type="text" class="form-control" id="city" placeholder="Où allez vous ?"> 
+                <p> blabla </p>
             </div>
-            <label for="date-arrivée">Arrivée</label>
-            <div class="form-group">
-                <input type="date" class="form-control" id="budget" placeholder=" Quand ?">
-            </div>
-            <label for="date-départ">Départ</label>
-            <div class="form-group">
-                <input type="date" class="form-control" id="budget" placeholder=" Quand ?">
-            </div>
-            <label for="date-départ">Voyageurs</label>
-            <div class="form-group">
-                <input type="number" class="form-control"  placeholder="Qui ?">
-            </div>
 
-            <button type="submit">Rechercher</button>
-        </form>
-
-
-
-    <!-- Caroussel -->
-
+        </div>
+    </div>
 
     
     <hr>

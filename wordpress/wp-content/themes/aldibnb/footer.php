@@ -2,8 +2,8 @@
     <div class="container"> 
       <footer class="footer_container">
         <div class="footer__col1">
-          <div class="footer__title">Pages</div>
           <ul>
+            <li><strong>Page</strong></li>
             <li><a href="#">A propos</a></li>
             <li><a href="#">Conditions d'utilisations</a></li>
             <li><a href="#">Politiques de confidentialités</a></li>
@@ -11,11 +11,7 @@
         </div>
         <div class="footer__col2">
           <div class="footer__title">Pages</div>
-          <ul>
-            <li><a href="#">A propos</a></li>
-            <li><a href="#">Conditions d'utilisations</a></li>
-            <li><a href="#">Politiques de confidentialités</a></li>
-          </ul>
+          
         </div>
         <div class="footer__col3">
           <div class="footer__title">Pages</div>
@@ -26,8 +22,8 @@
           </ul>
         </div>
         <div class="footer__col4">
-          <div class="footer__title">Pages</div>
           <ul>
+            <li><strong>Page</strong></li>
             <li><a href="#">A propos</a></li>
             <li><a href="#">Conditions d'utilisations</a></li>
             <li><a href="#">Politiques de confidentialités</a></li>
@@ -49,7 +45,7 @@
           </div>
         </div>
       </footer>
-    </div>
+  </div>
 
 
   <?php wp_footer() ?>
