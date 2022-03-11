@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -89,3 +90,6 @@ add_action('admin_post_add_comment', function () {
     wp_redirect(home_url('/') . '?p=' . $_REQUEST['post_id']);
     exit();
 });
+add_action('wp_enqueue_scripts', 'Bootstrap');
+
+?>
