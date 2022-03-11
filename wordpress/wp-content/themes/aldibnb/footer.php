@@ -10,17 +10,24 @@
           </ul>
         </div>
         <div class="footer__col2">
-          <div class="footer__title">Pages</div>
-          
-        </div>
-        <div class="footer__col3">
-          <div class="footer__title">Pages</div>
           <ul>
+            <li><strong>Page</strong></li>
             <li><a href="#">A propos</a></li>
             <li><a href="#">Conditions d'utilisations</a></li>
             <li><a href="#">Politiques de confidentialités</a></li>
           </ul>
+            
+          
         </div>
+        <div class="footer__col3">
+        <ul>
+            <li><strong>Page</strong></li>
+            <li><a href="#">A propos</a></li>
+            <li><a href="#">Conditions d'utilisations</a></li>
+            <li><a href="#">Politiques de confidentialités</a></li>
+        </ul>
+        </div>  
+          
         <div class="footer__col4">
           <ul>
             <li><strong>Page</strong></li>
@@ -29,9 +36,9 @@
             <li><a href="#">Politiques de confidentialités</a></li>
           </ul>
         </div>
+        
         <div class="footer__col">
-          <div class="footer__credits">© 2020 Grafikart Real Estate, Inc.</div>
-          <div class="footer__social">
+          <div class="footer__credits">© 2022, Inc.</div>
           <div class="footer__social">
               <div class="twitter">
                   <img src="https://img.icons8.com/material/30/000000/twitter--v1.png"/>
