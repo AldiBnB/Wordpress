@@ -63,6 +63,20 @@ body {
     <div class="form"><p class="title">Bienvenue sur AldiBnB</p>
     <?php wp_login_form(); ?></div>
 </body>
+<script>
+    document.querySelectorAll('label').forEach(function(l) {
+
+        if (l.innerText == 'Identifiant ou adresse e-mail') {
+
+            l.innerText = 'ton Text bg';
+
+        }
+        elseif(l.innerText == 'Mot de passe') {
+
+            l.innerText = 'ton Text bg';
+        }
+    });
+</script>
 
 <script>
     document.querySelectorAll('label').forEach(function(label) {
