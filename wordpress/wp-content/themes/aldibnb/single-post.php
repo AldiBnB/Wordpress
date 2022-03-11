@@ -14,26 +14,27 @@
                         <p><small>Localisation : <?php echo get_post_meta(get_the_ID(), 'location', true); ?></small></p>
                     <?php endif; ?>
                 </div>
-
-                <!-- diplay all comments -->
-                <?php
-                $comments = get_comments(array(
-                    'post_id' => get_the_ID(),
-                    'status' => 'approve'
-                ));
-                ?>
-                <?php if (count($comments) > 0) : ?>
-                    <div>
-                        <h5>Commentaires</h5>
-                        <?php foreach ($comments as $comment) : ?>
-                            <div>
-                                <p><?php echo $comment->comment_content; ?></p>
-                                <p><small>Écrit par <?php echo $comment->comment_author; ?> le <?php echo $comment->comment_date; ?></small></p>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
             </div>
+
+            <!-- diplay all comments -->
+            <?php
+            $comments = get_comments(array(
+                'post_id' => get_the_ID(),
+                'status' => 'approve'
+            ));
+            ?>
+            <?php if (count($comments) > 0) : ?>
+                <div>
+                    <h5>Commentaires</h5>
+                    <?php foreach ($comments as $comment) : ?>
+                        <div>
+                            <p><?php echo $comment->comment_content; ?></p>
+                            <p><small>Écrit par <?php echo $comment->comment_author; ?> le <?php echo $comment->comment_date; ?></small></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+
         <?php endwhile; ?>
         <!-- add comments input -->
         <?php if (is_user_logged_in()) : ?>
