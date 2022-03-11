@@ -61,7 +61,29 @@ body {
 <body>
     <?php get_header(); ?>
     <div class="form"><p class="title">Bienvenue sur AldiBnB</p>
-    <?php wp_login_form(); ?></div>
+    <!-- <?php wp_login_form(); ?></div> -->
+
+    <form action="<?php echo home_url('wp-login.php')  ?>" method="post">
+            <input type="hidden" name="action" value="login_user">
+            <div>
+                <input type="text" placeholrder="Username ou Adresse Email" name="log" id="log" placeholder="Username" />
+            </div>
+            <div>
+                <input type="password" placeholder="Mot de passe" name="pwd" id="pwd" placeholder="Password" />
+            </div>
+            <div>
+                <input type="checkbox" name="rememberme" id="rememberme" />
+                <label for="rememberme">Se souvenir</label>
+            </div>
+            <input type="hidden" name="redirect_to" value="/" />
+            <div>
+                <input type="submit" name="wp-submit" value="Login" />
+                <?php if(isset($_GET['create']) && $_GET['create'] == 'success'){ ?>
+                <p>Votre compte a bien été créé. Vous pouvez maintenant vous connecter.</p>
+                <?php } ?>
+            </div>
+        </form>
+
 </body>
 <script>
     document.querySelectorAll('label').forEach(function(l) {
