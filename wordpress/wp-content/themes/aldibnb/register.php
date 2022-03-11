@@ -10,10 +10,10 @@ if (is_user_logged_in()) {
 // if register
 if (isset($_POST['register'])) {
     // set username, hash password, email and role
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $email = $_POST['email'];
-    $role = $_POST['role'];
+    $username = htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['password']);
+    $email = htmlspecialchars($_POST['email']);
+    $role = htmlspecialchars($_POST['role']);
     // check if username already exist
     $user_id = username_exists($username);
     if (!$user_id and email_exists($email) == false) {

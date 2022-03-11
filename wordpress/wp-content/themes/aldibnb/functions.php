@@ -20,8 +20,8 @@ $action = empty($_REQUEST['action']) ? '' : $_REQUEST['action'];
 add_action('after_setup_theme', 'AldiBnbSetupTheme');
 add_action('admin_post_post_article', function () {
     $post_args = array(
-        'post_content' => strip_tags($_POST['post_content']),
-        'post_title' => strip_tags($_POST['post_title']),
+        'post_content' => htmlspecialchars($_POST['post_content']),
+        'post_title' => htmlspecialchars($_POST['post_title']),
         'post_type' => 'post',
         'post_status' => 'private',
         'comment_status' => 'open',
@@ -29,10 +29,10 @@ add_action('admin_post_post_article', function () {
         // add location info to post with $_POST['post_location']
 
         'meta_input' => array(
-            'auteur' => strip_tags($_POST['auteur']),
-            'location' => strip_tags($_POST['post_location']),
-            'date debut' => strip_tags($_POST['post_start_date']),
-            'date fin' => strip_tags($_POST['post_end_date'])
+            'auteur' => htmlspecialchars($_POST['auteur']),
+            'location' => htmlspecialchars($_POST['post_location']),
+            'date debut' => htmlspecialchars($_POST['post_start_date']),
+            'date fin' => htmlspecialchars($_POST['post_end_date'])
 
         )
     );
@@ -73,16 +73,16 @@ add_action('admin_post_publish_post', function () {
 add_action('admin_post_add_comment', function () {
     $comment_args = array(
         'comment_post_ID' => $_REQUEST['post_id'],
-        'comment_content' => $_REQUEST['comment_content'],
-        'comment_author' => $_REQUEST['comment_author'],
-        'comment_author_email' => $_REQUEST['comment_author_email'],
-        'comment_author_url' => $_REQUEST['comment_author_url'],
-        'comment_author_IP' => $_REQUEST['comment_author_IP'],
-        'comment_agent' => $_REQUEST['comment_agent'],
-        'comment_date' => $_REQUEST['comment_date'],
-        'comment_approved' => $_REQUEST['comment_approved'],
-        'comment_parent' => $_REQUEST['comment_parent'],
-        'user_id' => $_REQUEST['user_id']
+        'comment_content' => htmlspecialchars($_REQUEST['comment_content']),
+        'comment_author' => htmlspecialchars($_REQUEST['comment_author']),
+        'comment_author_email' => htmlspecialchars($_REQUEST['comment_author_email']),
+        'comment_author_url' => htmlspecialchars($_REQUEST['comment_author_url']),
+        'comment_author_IP' => htmlspecialchars($_REQUEST['comment_author_IP']),
+        'comment_agent' => htmlspecialchars($_REQUEST['comment_agent']),
+        'comment_date' => htmlspecialchars($_REQUEST['comment_date']),
+        'comment_approved' => htmlspecialchars($_REQUEST['comment_approved']),
+        'comment_parent' => htmlspecialchars($_REQUEST['comment_parent']),
+        'user_id' => htmlspecialchars($_REQUEST['user_id'])
     );
     wp_insert_comment($comment_args);
     // redirect to the article that was commented
