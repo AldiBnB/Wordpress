@@ -1,0 +1,248 @@
+Ce fichier à pour but de lister par étape la bonne réalisation d'un projet Symfony.
+Il y'a aussi des exemples mais aussi des tips et des liens utiles.
+
+
+
+
+------Starting------
+Pour créer un projet symfony : symfony new my_project_name --full 
+Pour load un projet symfony et installer ses dépendances : composer install
+Pour lancer symfony en local : symfony server:start
+Installer un package de routage : composer require annotations
+Installer un package de template : composer require twig
+Il faut installer un package pour permettre à Twig d'utilser du css ou des images : composer require symfony/asset
+Autre addon de Twig, le debugger semblable à var_dump : composer require symfony/var-dumper
+Doctrine : composer require symfony/orm-pack et composer require --dev symfony/maker-bundle
+composer require symfonycasts/verify-email-bundle
+composer require symfony/form
+---------------------------------------------------------
+
+
+
+-------Routage-------
+Le routage est un système de route qui permet de définir les urls qui sont utilisées pour accéder aux pages.
+
+Exemple :
+use Symfony\Component\Routing\Annotation\Route;
+/**
+  * @Route("/lucky/number")
+ */
+
+pour avoir accés à la page : http://mapage.com/lucky/number
+
+Pour verifier que la route est bien crée faire : php bin/console debug:router
+
+---------------------------------------------------------
+
+
+
+
+-------Controllers-------
+Le rôle du controller va être de nous retourner une réponse par rapport à une route ou une requête donnée.
+
+Exemple de controller :
+
+<?php
+// src/Controller/MonController.php
+namespace App\Controller;
+use Symfony\Component\HttpFoundation\Response;
+
+class MonController : Response  
+{
+    public function maFonctionDeMonController():  
+    {
+        return new Response('<div>Hello World !</div>'); 
+    }
+}
+?>
+---
+Voici une liste des redirects possibles :
+    // redirects to the "homepage" route
+    return $this->redirectToRoute('homepage');
+
+
+    // does a permanent - 301 redirect
+    return $this->redirectToRoute('homepage', [], 301);
+
+    // redirect to a route with parameters
+    return $this->redirectToRoute('routeName', ['var1' => 'valeur1']);
+
+    // redirects to a route and maintains the original query string parameters
+    return $this->redirectToRoute('blog_show', $request->query->all());
+
+    // redirects externally
+    return $this->redirect('http://symfony.com/doc');
+---
+Les services sont utilisés pour render des templates, des emails, des query, etc.
+Pour voir les services disponibles : php bin/console debug:autowiring
+
+
+---
+Gérer les erreurs et les pages 404 !
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+Exemple :
+    // ...
+    public function showAction($id)
+    {
+        // ...
+        if (!$product = $this->getDoctrine()->getRepository('App:Product')->find($id)) {
+            throw $this->createNotFoundException('The product does not exist');
+        }
+        // ...
+    }
+
+---
+LES SESSIONS
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+mettre en parameters de la fonction controller : SessionInterface $session
+https://symfony.com/doc/current/session.html
+---
+Envoyer un JSON 
+use Symfony\Component\HttpFoundation\Response;
+public function index(): Response
+{
+    // returns '{"username":"jane.doe"}' and sets the proper Content-Type header
+    return $this->json(['username' => 'jane.doe']);
+
+    // the shortcut defines three optional arguments
+    // return $this->json($data, $status = 200, $headers = [], $context = []);
+}
+---
+Faire telecharger un fichier:
+use Symfony\Component\HttpFoundation\Response;
+public function download(): Response
+{
+    // load the file from the filesystem
+    $file = new File('/path/to/some_file.pdf');
+
+    return $this->file($file);
+
+    // rename the downloaded file
+    return $this->file($file, 'custom_name.pdf');
+}
+
+---------------------------------------------------------
+
+
+
+-------Moteur de Template Twig-------
+Pour faire appel à un template il faut que la classe soit un abstractController et que la méthode soit un render.
+il faut donc ajouter ça : use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+et après la classe : extends AbstractController
+
+Exemple : 
+---
+<?php
+// src/Controller/MonController.php
+namespace App\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+class monController extends AbstractController
+  {
+      // ...
+        public function maFonctionDeMonController(): Response
+        {
+            return $this->render('monTemplate.html.twig', [
+                'title' => 'Hello World !',
+                'var1' => 'valeur1',
+                'var2' => 'valeur2',
+            ]);
+        }
+  }
+---
+La methode renderView() permet de faire appel à un template sans passer par le controller ou de l'appeler plus tard .
+
+---
+$contents = $this->renderView('monTemplate.html.twig', [
+                'title' => 'Hello World !',
+                'var1' => 'valeur1',
+                'var2' => 'valeur2',
+            ]);
+
+return new Response($contents);
+---
+
+le nom d'un template doit être de cette forme : monTemplate.html.twig
+pour faire appel à une des variables dans le template : {{var1}}
+
+pour faire de l'algo dans le template : {%...%}
+pour faire un commentaire dans le template : {#...#}
+pour faire un var_dump : {% dump %} ou {{ dump() }} 
+Twig à des outils assez utiles par exemples pour mettre en upperCase : {{var1|upper}}
+Liste des tags utiles de Twig : https://twig.symfony.com/doc/2.x/tags/index.html
+Liste des filtres utiles de Twig : https://twig.symfony.com/doc/2.x/filters/index.html
+Liste des functions utiles de Twig : https://twig.symfony.com/doc/2.x/functions/index.html
+Pour créer sa propre extension : https://symfony.com/doc/current/templating/twig_extension.html
+
+Pour utiliser des assets ( images, css, js ) :
+    <img src="{{ asset('public/images/logo.png') }}" alt="img"/>
+    <link href="{{ asset('public/css/monCSS.css') }}" rel="stylesheet"/>
+    <script src="{{ asset('public/bundles/js/monJS.js') }}"></script>
+
+app est la variable global qui contients toutes les informations de l'application: 
+    - app.request : contient les informations de la requête
+    - app.session : contient les informations de la session
+    - app.user : contient les informations de l'utilisateur
+    - app.flashes : contient les informations des messages flash 
+
+On peut verifier si un template existe. Premièrement il faut prendre le loader .
+---
+use Twig\Environment;
+
+class YourService
+{
+    // this code assumes that your service uses autowiring to inject dependencies
+    // otherwise, inject the service called 'twig' manually
+    public function __construct(Environment $twig)
+    {
+        $loader = $twig->getLoader();
+    }
+}
+if ($loader->exists('theme/layout_responsive.html.twig')) {
+    // the template exists, do something
+    // ...
+}
+---
+Si un frangement de code est souvant utilisé dans le template on peut créer un Fragement template.
+exemples :
+    {# templates/blog/_monFragementDeCode.html.twig #}
+    
+    <div class="user-profile">
+        <img src="{{ user.profileImageUrl }}" alt="{{ user.fullName }}"/>
+        <p>{{ user.fullName }} - {{ user.email }}</p>
+    </div>
+
+DANS LE TEMPLATE OU L'ON VEUT L'UTILISER :
+    {{include ('blog/_monFragementDeCode.html.twig' },{optional_var: valeur1}) }
+
+---
+
+---------------------------------------------------------
+
+
+
+
+
+-------Entity-------
+Au niveau du vocabulaire, un objet dont vous confiez l'enregistrement à l'ORM s'appelle une entité (entity en anglais). 
+On dit également persister une entité, plutôt qu'enregistrer une entité.
+L'objectif d'un ORM est simple : se charger de l'enregistrement de vos données en vous faisant oublier que vous avez une base de données.
+Comment ? En s'occupant de tout ! 
+Nous n'allons plus écrire de requêtes, ni créer de tables via phpMyAdmin. 
+Dans notre code PHP, nous allons faire appel à Doctrine, l'ORM par défaut de Symfony2, pour faire tout cela.
+
+Faire une entity : php bin/console make:entity -> php bin/console make:migration -> php bin/console doctrine:migrations:migrate 
+
+---------------------------------------------------------
+
+
+
+-------Repository-------
+Repository est un objet qui permet de faire des requêtes sur une table.
+Un repository centralise tout ce qui touche à la récupération de vos entités. 
+Concrètement donc, vous ne devez pas faire la moindre requête SQL ailleurs que dans un repository, c'est la règle. 
+On va donc y construire des méthodes pour récupérer une entité par son id, pour récupérer une liste d'entités suivant un critère spécifique, etc. 
+Bref, à chaque fois que vous devez récupérer des entités dans votre base de données, vous utiliserez le repository de l'entité correspondante.
+
+---------------------------------------------------------
+

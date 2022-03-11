@@ -20,8 +20,8 @@ $action = empty($_REQUEST['action']) ? '' : $_REQUEST['action'];
 add_action('after_setup_theme', 'AldiBnbSetupTheme');
 add_action('admin_post_post_article', function () {
     $post_args = array(
-        'post_content' => $_POST['post_content'],
-        'post_title' => $_POST['post_title'],
+        'post_content' => strip_tags($_POST['post_content']),
+        'post_title' => strip_tags($_POST['post_title']),
         'post_type' => 'post',
         'post_status' => 'private',
         'comment_status' => 'open',
@@ -29,10 +29,10 @@ add_action('admin_post_post_article', function () {
         // add location info to post with $_POST['post_location']
 
         'meta_input' => array(
-            'auteur' => $_POST['auteur'],
-            'location' => $_POST['post_location'],
-            'date debut' => $_POST['post_start_date'],
-            'date fin' => $_POST['post_end_date']
+            'auteur' => strip_tags($_POST['auteur']),
+            'location' => strip_tags($_POST['post_location']),
+            'date debut' => strip_tags($_POST['post_start_date']),
+            'date fin' => strip_tags($_POST['post_end_date'])
 
         )
     );
@@ -43,6 +43,7 @@ add_action('admin_post_post_article', function () {
     $thumbnail_id = $_FILES['post_thumbnail']['name'];
     // upload image
     $attachement_id = media_handle_upload('post_thumbnail', $post_id);
+    // if attachment is not image redirect to home
     if (is_wp_error($attachement_id)) {
         echo $attachement_id->get_error_message();
         echo '<br>';

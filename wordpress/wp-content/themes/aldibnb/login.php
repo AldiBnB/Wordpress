@@ -23,6 +23,20 @@ if (is_user_logged_in()) {
     <?php get_header(); ?>
     <?php wp_login_form(); ?>
 </body>
+<script>
+    document.querySelectorAll('label').forEach(function(l) {
+
+        if (l.innerText == 'Identifiant ou adresse e-mail') {
+
+            l.innerText = 'ton Text bg';
+
+        }
+        elseif(l.innerText == 'Mot de passe') {
+
+            l.innerText = 'ton Text bg';
+        }
+    });
+</script>
 
 
 </html>
