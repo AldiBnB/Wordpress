@@ -111,6 +111,16 @@
                     });
                 </script>
                 <!-- else -->
+            <?php else : ?>
+                <script>
+                    document.querySelectorAll('.page_item').forEach(function(page_item) {
+                        // si le a est Register ou Login
+                        if (page_item.querySelector('a').innerHTML === 'Créez votre annonce') {
+                            page_item.remove();
+                        }
+
+                    });
+                </script>
             <?php endif; ?>
             <!-- si l'utilisateur n'est pas du role admin on retire Back-office  -->
             <?php if (!current_user_can('administrator')) : ?>
