@@ -20,7 +20,7 @@ if (is_user_logged_in()) {
 <style>
 
 body {
-    height: 100%;
+    height: 100vh;
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,247,211,1) 100%);
     background-position: center;
     background-repeat: no-repeat;
@@ -37,21 +37,41 @@ body {
 .form {
     font-family: "Georgia";
     font-size: 14px;
-    /* position: relative; */
+    display:flex;
+    flex-direction: column;
     text-align: center;
     width: 450px;
     padding: 0px 20px;
     box-sizing: border-box;
     border-radius: 4px;
     background: white;
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    margin: 150px auto;
     box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.4);
+}
+
+.input {
+    margin-bottom: 20px;
+}
+
+.boxinput {
+    padding: 6px 10px;
+    font-family: "Monaco";
+    font-size: 18px;
+    border:1px solid gray;
+    border-radius: 8px;
+    width: 200px;
+}
+
+.sometext {
+    font-family: "Monaco";
+    font-size: 18px;
+}
+
+.checkbox {
+    font-size: 14px;
+    background: #3E65BE;
+    color: white;
+    padding: 3px 40px;
 }
 
 </style>
@@ -65,54 +85,24 @@ body {
 
     <form action="<?php echo home_url('wp-login.php')  ?>" method="post">
             <input type="hidden" name="action" value="login_user">
-            <div>
-                <input type="text" placeholrder="Username ou Adresse Email" name="log" id="log" placeholder="Username" />
+            <div class="input">
+                <input class="boxinput" type="text" placeholrder="Username ou Adresse Email" name="log" id="log" placeholder="Username" />
             </div>
-            <div>
-                <input type="password" placeholder="Mot de passe" name="pwd" id="pwd" placeholder="Password" />
+            <div class="input">
+                <input class="boxinput" type="password" placeholder="Mot de passe" name="pwd" id="pwd" placeholder="Password" />
             </div>
-            <div>
+            <div class="input">
                 <input type="checkbox" name="rememberme" id="rememberme" />
-                <label for="rememberme">Se souvenir</label>
+                <label class="sometext" for="rememberme">Se souvenir</label>
             </div>
             <input type="hidden" name="redirect_to" value="/" />
-            <div>
-                <input type="submit" name="wp-submit" value="Login" />
+            <div class="input">
+                <input class="checkbox" type="submit" name="wp-submit" value="Se connecter" />
                 <?php if(isset($_GET['create']) && $_GET['create'] == 'success'){ ?>
-                <p>Votre compte a bien été créé. Vous pouvez maintenant vous connecter.</p>
                 <?php } ?>
             </div>
         </form>
 
 </body>
-<script>
-    document.querySelectorAll('label').forEach(function(l) {
-
-        if (l.innerText == 'Identifiant ou adresse e-mail') {
-
-            l.innerText = 'ton Text bg';
-
-        }
-        elseif(l.innerText == 'Mot de passe') {
-
-            l.innerText = 'ton Text bg';
-        }
-    });
-</script>
-
-<script>
-    document.querySelectorAll('label').forEach(function(label) {
-        // si le a est Back-office
-        if (label.innerHTML === 'Identifiant ou adresse e-mail') {
-        // update le label avec 'Email'
-        label.innerHTML = 'AHH';
-
-        }
-        elseif(label.innerHTML === 'Mot de passe') {
-        // update le label avec 'Password'
-        label.innerHTML = 'AAH';
-        }
-    });
-</script>
 
 </html>

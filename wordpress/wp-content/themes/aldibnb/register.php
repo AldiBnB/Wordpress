@@ -62,24 +62,34 @@ if (isset($_POST['register'])) {
             font-size: 14px;
             display: flex;
             flex-direction: column;
-            /* position: relative; */
             text-align: center;
             width: 450px;
             padding: 0px 20px;
             box-sizing: border-box;
             border-radius: 4px;
             background: white;
-            margin: 100px auto;
-            /* position: absolute; */
-            /* top: 45%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); */
+            margin: 150px auto;
             box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.4);
         }
 
         .input {
             margin-bottom: 20px;
+        }
+
+        .boxinput {
+            padding: 6px 10px;
+            font-family: "Monaco";
+            font-size: 18px;
+            border: 1px solid gray;
+            border-radius: 8px;
+            width: 200px;
+        }
+
+        .checkbox {
+            font-size: 14px;
+            background: #3E65BE;
+            color: white;
+            padding: 3px 40px;
         }
     </style>
 </head>
@@ -91,30 +101,29 @@ if (isset($_POST['register'])) {
     <form class="form" action="<?php echo esc_url(site_url('/register')); ?>" method="post">
         <p class="title">Inscription</p>
         <div class="input">
-            <input type="text" name="username" placeholder="Username" class="form-control" value="<?php echo (!empty($_POST['username'])) ? $_POST['username'] : ''; ?>">
+            <input type="text" class="boxinput" name="username" placeholder="Username" class="form-control" value="<?php echo (!empty($_POST['username'])) ? $_POST['username'] : ''; ?>">
         </div>
         <div class="input">
-            <input type="email" name="email" placeholder="Adresse Email" class="form-control" value="<?php echo (!empty($_POST['email'])) ? $_POST['email'] : ''; ?>">
+            <input type="email" class="boxinput" name="email" placeholder="Adresse Email" class="form-control" value="<?php echo (!empty($_POST['email'])) ? $_POST['email'] : ''; ?>">
         </div>
         <div class="input">
-            <input type="password" name="password" placeholder="Mot de passe" class="form-control" value="<?php echo (!empty($_POST['password'])) ? $_POST['password'] : ''; ?>">
+            <input type="password" class="boxinput" name="password" placeholder="Mot de passe" class="form-control" value="<?php echo (!empty($_POST['password'])) ? $_POST['password'] : ''; ?>">
         </div>
         <div class="input">
-            <input type="password" name="confirm_password" placeholder="Confirmer le mot de passe" class="form-control" value="<?php echo (!empty($_POST['confirm_password'])) ? $_POST['confirm_password'] : ''; ?>">
+            <input type="password" class="boxinput" name="confirm_password" placeholder="Confirmer le mot de passe" class="form-control" value="<?php echo (!empty($_POST['confirm_password'])) ? $_POST['confirm_password'] : ''; ?>">
         </div>
 
 
         <div class="input">
-            <label for="role">Role</label>
             <select name="role" id="role">
                 <!-- role de wordpress -->
-                <option value="administrator">Administrateur</option>
                 <option value="author">Utilisateur</option>
+                <option value="administrator">Administrateur</option>
 
             </select>
         </div>
         <div class="input">
-            <input type="submit" name="register" class="btn btn-primary" value="Register">
+            <input type="submit" class="checkbox" name="register" class="btn btn-primary" value="S'inscrire">
         </div>
     </form>
 </body>
