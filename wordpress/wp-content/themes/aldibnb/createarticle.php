@@ -80,7 +80,6 @@ if (!is_user_logged_in()) {
             <label for="post_thumbnail">Image de l'annonce</label>
             <img src="https://www.pngkey.com/png/full/909-9099231_png-file-svg-camera-add-icon-png.png" />
             <input type="file" name="post_thumbnail" id='post_thumbnail' multiple="false" class="file-upload" accept="image/*" required>
-
             </label>
         </div>
         <script>
