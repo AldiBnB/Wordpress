@@ -55,7 +55,7 @@ if (!current_user_can('administrator')) {
     /* we want image with all the same size */
     .contenu>div>img {
         /* conserver le ratio de l'image mais rendre la taille dans son bloc fixe quitte à la crop */
-        width: 100%;
+        width: 80%;
         height: 100%;
         object-fit: cover;
 
