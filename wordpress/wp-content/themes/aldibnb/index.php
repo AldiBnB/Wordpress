@@ -7,7 +7,7 @@
     <div class="main_search">
 
 
-        <div class="container">
+  
 
         
             
@@ -39,7 +39,7 @@
 
         <!-- Caroussel -->
 
-                <p> blabla </p>
+                <p> <img src="https://www.shbarcelona.fr/blog/fr/wp-content/uploads/2016/03/appartement-photo-810x540.jpg"> </p>
             </div>
 
         </div>
