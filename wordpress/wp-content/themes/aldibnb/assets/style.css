@@ -6,7 +6,7 @@
   grid-row-gap: 0px;
   }
   
-  .container { grid-area: 1 / 1 / 2 / 2; }
+  .form { grid-area: 1 / 1 / 2 / 2; }
   .view-content { grid-area: 1 / 2 / 2 / 3; }
 
 
@@ -36,6 +36,7 @@
   grid-template-rows: 1fr;
   grid-column-gap: 50px;
   grid-row-gap: 0px;
+  text-decoration: none;
   }
   
   .footer__col1 { grid-area: 1 / 1 / 2 / 2; }
