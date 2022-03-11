@@ -4,6 +4,7 @@
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
             <div>
+                <!-- Le post-->
                 <img src="<?php the_post_thumbnail_url(); ?>" alt="Image">
                 <div>
                     <h5><?php the_title(); ?></h5>
@@ -13,6 +14,7 @@
                     <?php if (get_post_meta(get_the_ID(), 'location', true)) : ?>
                         <p><small>Localisation : <?php echo get_post_meta(get_the_ID(), 'location', true); ?></small></p>
                     <?php endif; ?>
+                    <!-- Le post-->
                 </div>
 
                 <!-- diplay all comments -->
@@ -23,6 +25,7 @@
                 ));
                 ?>
                 <?php if (count($comments) > 0) : ?>
+                    <!-- affichage commentaire -->
                     <div>
                         <h5>Commentaires</h5>
                         <?php foreach ($comments as $comment) : ?>
@@ -32,11 +35,13 @@
                             </div>
                         <?php endforeach; ?>
                     </div>
+                    <!-- affichage commentaire -->
                 <?php endif; ?>
             </div>
         <?php endwhile; ?>
         <!-- add comments input -->
         <?php if (is_user_logged_in()) : ?>
+            <!-- creation commentaire -->
             <div>
                 <div>
                     <h5>Ajouter un commentaire</h5>
@@ -53,6 +58,7 @@
                     </form>
                 </div>
             </div>
+            <!-- creation commentaire -->
         <?php endif; ?>
     <?php else : ?>
         <h2>Pas de posts</h2>
