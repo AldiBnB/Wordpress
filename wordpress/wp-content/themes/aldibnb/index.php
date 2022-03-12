@@ -54,6 +54,14 @@
                 <hr>
     </main>
 
+    <!-- echo do_shortcode '[carrousel]'  with 2 in parameters-->
+    <?php
+
+    echo do_shortcode('[carrousel limite=' . 4 . ']');
+    ?>
+
+
+
 </body>
 
 </html>
