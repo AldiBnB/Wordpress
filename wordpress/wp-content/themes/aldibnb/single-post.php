@@ -22,6 +22,7 @@
             width: 660px;
             height: 446px;
             display: block;
+            object-fit: contain;
         }
 
         body {
