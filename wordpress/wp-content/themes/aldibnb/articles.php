@@ -32,30 +32,79 @@ if (empty($_POST)) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Articles</title>
+
+    <style>
+    body {
+        width: 100%;
+        height: 100vh;
+        overflow-x: hidden;
+    }
+    .title {
+        font-size: 14pt;
+    }
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    html {
+        background: #FFFAEA;
+    }
+    .content>div {
+        width: 20rem;
+        height: 20rem;
+        border: 1px solid black;
+        padding: 20px;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 0px 0px 10px black;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    .content>div>img {
+        width: 50%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        margin-left: auto;
+        margin-right: auto }
+
+    }
+    .content>div>div>a {
+        text-decoration: none;
+        padding: 5px;
+        color: white;
+    }
+</style>
 </head>
 
 <body>
     <?php get_header(); ?>
+    <div class="content">
     <?php
     foreach ($posts as $post) {
     ?>
         <div>
             <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="Image">
             <div>
-                <h5><?php echo $post->post_title; ?></h5>
+                <hr class="solid">
+                <h5 class="title"><?php echo $post->post_title; ?></h5>
                 <p><?php echo $post->post_excerpt; ?></p>
-                <p><small>Écrit le : <?php echo $post->post_date; ?></small></p>
+                <p><small>Publié le : <?php echo $post->post_date; ?></small></p>
                 <!-- show meta location -->
                 <?php if (get_post_meta($post->ID, 'location', true)) : ?>
-                    <p><small>Localisation : <?php echo get_post_meta($post->ID, 'location', true); ?></small></p>
+                    <p><small>Lieu : <?php echo get_post_meta($post->ID, 'location', true); ?></small></p>
                 <?php endif; ?>
             </div>
-            <a href="<?php echo get_permalink($post->ID); ?>">Lire la suite</a>
+            <a href="<?php echo get_permalink($post->ID); ?>">Voir l'annonce</a>
         </div>
     <?php
     }
     ?>
+    </div>
 </body>
 
 </html>
