@@ -44,7 +44,7 @@ if (isset($_POST['register'])) {
     <style>
         body {
             height: 100vh;
-            background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 247, 211, 1) 100%);
+            background: #FFFAEA;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;

@@ -84,7 +84,7 @@
                 var ul = menu.querySelector('ul');
                 var li = document.createElement('li');
                 var a = document.createElement('a');
-                var text = document.createTextNode('Voir les annonces');
+                var text = document.createTextNode('Home');
                 // href '/'
                 a.href = '/';
                 a.appendChild(text);
