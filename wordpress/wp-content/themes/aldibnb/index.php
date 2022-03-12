@@ -26,7 +26,7 @@
                     <div class="container">
                         <div class="view-content">
                             <!-- Caroussel -->
-                            <p> <img src="https://www.shbarcelona.fr/blog/fr/wp-content/uploads/2016/03/appartement-photo-810x540.jpg"> </p>
+                            <p> <?php  wppln_last_posts('1','1','true'); ?> <p>
                         </div>
 
                     </div>
@@ -52,8 +52,66 @@
                 </section>
 
                 <hr>
+        <?php get_footer(); ?>
     </main>
+    
 
 </body>
 
 </html>
+
+<style>
+    .sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 27px;
+  grid-row-gap: 0px;
+  }
+  
+  .main_search{ grid-area: 1 / 1 / 2 / 3; }
+  .newsletter{ grid-area: 2 / 1 / 3 / 3; }
+  .footer_container{ grid-area: 3 / 1 / 4 / 3; }
+
+  
+.main_search {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 27px;
+grid-row-gap: 0px;
+}
+
+.search-form{ grid-area: 1 / 1 / 2 / 2; }
+.view-content { grid-area: 1 / 2 / 2 / 3; }
+
+
+.footer_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 27px;
+  grid-row-gap: 0px;
+  }
+  
+  .footer__col1 { grid-area: 1 / 1 / 2 / 2; }
+  .footer__col2{ grid-area: 1 / 2 / 2 / 3; }
+  .footer__col3{ grid-area: 1 / 3 / 2 / 4; }
+  .footer__col4 { grid-area: 1 / 4 / 2 / 5; }
+
+
+  .footer_social {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 27px;
+    grid-row-gap: 0px;
+    }
+    
+    .twitter { grid-area: 1 / 1 / 2 / 2; }
+    .instagram{ grid-area: 1 / 2 / 2 / 3; }
+    .facebook{ grid-area: 1 / 3 / 2 / 4; }
+    
+
+
+</style>
