@@ -95,3 +95,11 @@ add_action('admin_post_add_comment', function () {
     wp_redirect(home_url('/') . '?p=' . $_REQUEST['post_id']);
     exit();
 });
+//  add bootstrap
+
+function wpheticBootstrap()
+{
+    wp_enqueue_style('bootstrap_css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
+    wp_enqueue_script("bootstrap_js", "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js", [], false, true);
+}
+add_action('wp_enqueue_scripts', 'wpheticBootstrap');
