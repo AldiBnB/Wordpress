@@ -19,8 +19,11 @@ function carrousel_shortcode($limite, $nbrimageaffiche)
 {
    $posts = get_posts(array(
       'numberposts' => $limite['limite'],
+      // random poste et public poste
+      'orderby' => 'rand',
+      'post_status' => 'publish',
       'post_type' => 'post',
-      'orderby' => 'rand'
+
    ));
    $carrousel = '<div class="carrousel">';
 
