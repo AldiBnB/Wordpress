@@ -46,6 +46,8 @@ function carrousel_shortcode($limite, $nbrimageaffiche)
       .carrousel {
          display: flex;
          flex-direction: row;
+         // width par rapport à $nombrimageaffiche qui est le nombre d image que l on veut afficher
+         width: ' . $nbrimageaffiche['nbrimageaffiche'] . '00%;
       }
       .carrousel_images {
          display: flex;
