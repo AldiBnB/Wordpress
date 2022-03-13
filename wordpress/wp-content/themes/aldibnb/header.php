@@ -75,7 +75,8 @@
 
             <?php wp_nav_menu([
                 'theme_location' => 'header',
-                'container' => false
+                'container' => false,
+                'menu_class' => 'navbar-nav' 
             ]); ?>
 
             <script>

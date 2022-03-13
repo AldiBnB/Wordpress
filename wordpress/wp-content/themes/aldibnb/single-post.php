@@ -32,7 +32,7 @@
         .ajout_com {
             margin: 3px;
         }
-
+        <!-- bouton envoyer --> 
         button {
             margin: 20px 0px;
             background-color: #008CBA;
@@ -54,7 +54,7 @@
         .creation_commentaire {
             margin: 35px;
         }
-
+        <!-- Carré de saisi-->
         textarea {
 
             resize: none;
@@ -82,6 +82,23 @@
 
         .localisation {
             font-weight: bold;
+        }
+
+        .bloc_com_fait{
+            margin: 40px;
+        }
+
+        .titre_commentaire_fait{
+            margin-bottom: 10px;
+        }
+
+        .write_by{
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .commentaire_envoyer{
+            margin-top: 35px;
         }
     </style>
 </head>
@@ -115,12 +132,12 @@
             ));
             ?>
             <?php if (count($comments) > 0) : ?>
-                <div>
-                    <h5>Commentaires</h5>
+                <div class="bloc_com_fait">
+                    <h5 class="titre_commentaire_fait">Commentaires</h5>
                     <?php foreach ($comments as $comment) : ?>
                         <div>
-                            <p><?php echo $comment->comment_content; ?></p>
-                            <p><small>Écrit par <?php echo $comment->comment_author; ?> le <?php echo $comment->comment_date; ?></small></p>
+                            <p class="commentaire_envoyer"><?php echo $comment->comment_content; ?></p>
+                            <p class="write_by"><small>Écrit par <?php echo $comment->comment_author; ?> le <?php echo $comment->comment_date; ?></small></p>
                         </div>
                     <?php endforeach; ?>
                 </div>
