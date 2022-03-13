@@ -76,12 +76,12 @@
             <?php wp_nav_menu([
                 'theme_location' => 'header',
                 'container' => false,
-                'menu_class' => 'navbar-nav' 
+                'menu_class' => 'navbar-nav'
             ]); ?>
 
             <script>
                 // dom menu class
-                var menu = document.querySelector('.menu');
+                var menu = document.querySelector('.navbar-nav');
                 var ul = menu.querySelector('ul');
                 var li = document.createElement('li');
                 var a = document.createElement('a');
