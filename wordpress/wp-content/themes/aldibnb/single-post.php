@@ -58,8 +58,10 @@
         textarea {
 
             resize: none;
-            width: 400px;
+            max-width: 400px;
+            width: 100%;
             height: 100px;
+            max-height: 100%;
         }
 
         .titre_com {
