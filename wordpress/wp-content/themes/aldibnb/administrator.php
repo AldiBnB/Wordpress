@@ -64,18 +64,30 @@ if (!current_user_can('administrator')) {
     .contenu>div>div>a {
         text-decoration: none;
         padding: 5px;
-        background-color: blue;
+        background-color: #008CBA;
         color: white;
+        border-radius: 5px;
+        transition-duration: 0.4s;
+    }
+    .contenu>div>div>a:hover{
+        background-color: white;
+        color: #008CBA;
+        border: 2px solid #008CBA;
+
     }
 
     .contenu>div>div>a:nth-child(3) {
-        background-color: green;
+        background-color: #6CDF7C;
         color: white;
+        border-radius: 5px;
+        transition-duration: 0.4s;
     }
 
     .contenu>div>div>a:nth-child(4) {
         background-color: red;
         color: white;
+        border-radius: 5px;
+        transition-duration: 0.4s;
     }
 </style>
 

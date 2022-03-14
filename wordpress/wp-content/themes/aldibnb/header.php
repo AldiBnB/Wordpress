@@ -72,7 +72,7 @@
     <nav>
         <div>
             <!-- si l'utilisateur n'est pas connecté -->
-
+            
             <?php wp_nav_menu([
                 'theme_location' => 'header',
                 'container' => false
