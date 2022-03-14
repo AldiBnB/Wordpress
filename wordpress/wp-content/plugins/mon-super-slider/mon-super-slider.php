@@ -7,13 +7,14 @@
  * Author:            Eva VERGER
  */
 
-add_action('init','monsuperslider_init');
+add_action('init', 'monsuperslider_init');
 
 /** permet d'initialiser les fonctionnalités liées au carrousel  */
 
 
 
-function monsuperslider_init(){
+function monsuperslider_init()
+{
 
     $labels = array(
         'name' => 'Slide',
@@ -28,9 +29,9 @@ function monsuperslider_init(){
         'not_found_in_trash' => 'Aucun Slide dans la corbeille',
         'parent_item_colon' => '',
         'menu_name' => 'Slides'
-      );
+    );
 
-    register_post_type('slide',array(
+    register_post_type('slide', array(
         'public' => true,
         'publicly_querable' => false,
         'labels' => $labels,
@@ -38,25 +39,21 @@ function monsuperslider_init(){
         'capability_type' => 'post',
         'supports' => array('title', 'thumbnail'),
     ));
-
-
-
 }
 
 
 
 
- /** permet afficher carrousel */
+/** permet afficher carrousel */
 
 
- function monsuperslider_show($limit = 10){
-     
+function monsuperslider_show($limit = 10)
+{
+
     $slides = new WP_query("post_type=slide&posts_per_page=$limit");
-    while($slides->have_posts()){
+    while ($slides->have_posts()) {
         $slides->the_post();
         global $post;
         the_post_thumbnail('slider');
     }
-
-
- }
+}
