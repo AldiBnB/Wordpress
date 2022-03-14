@@ -46,16 +46,26 @@ function carrousel_shortcode($limite, $nbrimageaffiche)
       .carrousel {
          display: flex;
          flex-direction: row;
-         // width par rapport à $nombrimageaffiche qui est le nombre d image que l on veut afficher
-         width: ' . $nbrimageaffiche['nbrimageaffiche'] . '00%;
+         justify-content: center;
+         align-items:center;
+         flex-wrap: wrap;
+         gap: 12px;
       }
+
       .carrousel_images {
          display: flex;
          flex-wrap: nowrap;
+         justify-content: center;
+         align-items:center;
          overflow-x: auto;
          overflow-y: hidden;
          -webkit-overflow-scrolling: touch;
       }
+      .carrousel_images>a>img{
+         width: 250px;
+         height : 250px;
+      }
+
       .arrow {
          cursor: pointer;
          align-self: center;

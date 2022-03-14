@@ -69,7 +69,8 @@ if (!current_user_can('administrator')) {
         border-radius: 5px;
         transition-duration: 0.4s;
     }
-    .contenu>div>div>a:hover{
+
+    .contenu>div>div>a:hover {
         background-color: white;
         color: #008CBA;
         border: 2px solid #008CBA;
@@ -113,7 +114,7 @@ if (!current_user_can('administrator')) {
                     <div>
                         <h5 class="card-title"><?php the_title(); ?></h5>
                         <a href="<?php the_permalink(); ?>">Voir</a>
-                        <a href="<?php echo admin_url('admin-post.php'); ?>?action=publish_post&post_id=<?php the_ID(); ?>">Publier</a>
+                        <a class="btn2" href="<?php echo admin_url('admin-post.php'); ?>?action=publish_post&post_id=<?php the_ID(); ?>">Publier</a>
                         <a href="<?php echo get_delete_post_link(); ?>">Supprimer</a>
                         <!-- rendre -->
                     </div>
