@@ -17,13 +17,16 @@
         <section>
             <div class="main_search">
 
-                
+                <?php
 
-                
-                
-                    <div class="container">
+                echo do_shortcode('[carrousel limite=' . 4 . ']');
+                ?>
+
+
+
+                <!-- <div class="container">
                         <div class="view-content">
-                            <!-- Caroussel -->
+                            
                             <div class="caroussel"> 
                                 <img src="https://www.shbarcelona.fr/blog/fr/wp-content/uploads/2016/03/appartement-photo-810x540.jpg"> 
                             </div>
@@ -40,8 +43,8 @@
                             </div>
                         </div>
 
-                    </div>
-                
+                    </div> -->
+
 
                 <form class="search-form" action="/articles" method="post">
 
@@ -55,10 +58,10 @@
                     <button type="submit" class="btn btn-primary">Rechercher</button>
                 </form>
 
-            
 
 
-                
+
+
 
 
                 <hr>
@@ -83,10 +86,7 @@
     </main>
 
     <!-- echo do_shortcode '[carrousel]'  with 2 in parameters-->
-    <?php
 
-    echo do_shortcode('[carrousel limite=' . 4 . ']');
-    ?>
 
 
 
@@ -97,105 +97,117 @@
 
 
 <style>
-    
-.sections {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  }
-  
-  .main_search{ grid-area: 1 / 1 / 2 / 3; }
-  .newsletter{ grid-area: 2 / 1 / 3 / 3; }
-  .footer_container{ grid-area: 3 / 1 / 4 / 3; }
+    .sections {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
 
-  
-.main_search {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: 1fr;
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-background: linear-gradient(#FCECC099, white);
-text-align : center;
-border : solid 1px black
+    .main_search {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    .newsletter {
+        grid-area: 2 / 1 / 3 / 3;
+    }
+
+    .footer_container {
+        grid-area: 3 / 1 / 4 / 3;
+    }
 
 
-}
+    .main_search {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        background: linear-gradient(#FCECC099, white);
+        text-align: center;
+        border: solid 1px black
+    }
 
-.view-content{ grid-area: 1 / 1 / 2 / 2; }
-.search-form { grid-area: 1 / 2 / 2 / 3; }
+    .view-content {
+        grid-area: 1 / 1 / 2 / 2;
+    }
 
-.view-content {
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: repeat(2, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-}
+    .search-form {
+        grid-area: 1 / 2 / 2 / 3;
+    }
 
-.caroussel { grid-area: 1 / 1 / 2 / 2; }
-.mini-contain { grid-area: 2 / 1 / 3 / 2; }
+    .view-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
 
-.mini-contain {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: 1fr;
-grid-column-gap:0px;
-grid-row-gap: 0px;
-height: 500px;
-width :1000px
+    .caroussel {
+        grid-area: 1 / 1 / 2 / 2;
+    }
 
-}
+    .mini-contain {
+        grid-area: 2 / 1 / 3 / 2;
+    }
 
-.mini-contain1 { grid-area: 1 / 1 / 2 / 2; }
-.mini-contain2 { grid-area: 1 / 2 / 2 / 3; }
-.mini-contain3 { grid-area: 1 / 3 / 2 / 4; }
+    .mini-contain {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        height: 500px;
+        width: 1000px
+    }
 
+    .mini-contain1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
 
+    .mini-contain2 {
+        grid-area: 1 / 2 / 2 / 3;
+    }
 
-
-.view-content{
-    border : solid 1px black;
-}
-
-.search-form{
-    border : solid 1px black;
-    
-    
-}
-
-#post_location, #post_arrivée, #post_depart, #post_nb{
-    font-size : 20pt;
-    margin-bottom : 50px;
-    
-    
-    
-
-}
-
-#post_location, #post_nb{
-    height:60px;
-    width:500px;
-}
-
-#post_arrivée, #post_depart{
-    height:60px;
-    width:250px;
-}
+    .mini-contain3 {
+        grid-area: 1 / 3 / 2 / 4;
+    }
 
 
 
 
+    .view-content {
+        border: solid 1px black;
+    }
+
+    .search-form {
+        border: solid 1px black;
+
+
+    }
+
+    #post_location,
+    #post_arrivée,
+    #post_depart,
+    #post_nb {
+        font-size: 20pt;
+        margin-bottom: 50px;
 
 
 
 
+    }
 
+    #post_location,
+    #post_nb {
+        height: 60px;
+        width: 500px;
+    }
 
-
-
-
-
-
+    #post_arrivée,
+    #post_depart {
+        height: 60px;
+        width: 250px;
+    }
