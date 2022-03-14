@@ -97,13 +97,19 @@
 
 
 <style>
-    body{
+    img {
+        width: 250px;
+        height: 250px;
+    }
+
+    body {
 
         background: linear-gradient(#FCECC099, white);
         width: 100%;
         height: 100%;
 
     }
+
     .sections {
         margin: 50px 50px;
         /* display: grid; */
@@ -112,7 +118,9 @@
         grid-column-gap: 0px;
         grid-row-gap: 0px;
     }
-    .txt,h3{
+
+    .txt,
+    h3 {
         color: #13334C;
     }
 
@@ -147,7 +155,8 @@
         margin: 20px 0;
         border-radius: 5px;
     }
-    .newsletter_body{
+
+    .newsletter_body {
         margin: 45px 0;
     }
 
@@ -166,13 +175,16 @@
     .mini-contain {
         grid-area: 2 / 1 / 3 / 2;
     }
-    input{
+
+    input {
         opacity: 1px;
         border: none;
         border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        ;
     }
-    button{
+
+    button {
         border-radius: 5px;
         border: none;
         display: inline-block;
@@ -183,19 +195,23 @@
         /* margin-top: 10px; */
         margin-bottom: 10px;
     }
-    button:hover{
+
+    button:hover {
         background-color: white;
         color: #008CBA;
         border: 2px solid #008CBA;
     }
-    .btn-primary{
+
+    .btn-primary {
         padding: 10px 20px;
     }
-    .newsletter_title{
+
+    .newsletter_title {
         margin-top: 10px;
 
     }
-    hr{
+
+    hr {
         opacity: 50%;
     }
 
@@ -227,7 +243,7 @@
 
     .search-form {
         box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-        padding: 10px 0 ;
+        padding: 10px 0;
     }
 
     #post_location,
@@ -253,3 +269,4 @@
         height: 60px;
         width: 250px;
     }
+</style>
