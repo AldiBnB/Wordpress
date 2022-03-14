@@ -34,30 +34,26 @@
             margin: 3px;
         }
         <!-- bouton envoyer --> 
-        button {
-            margin: 20px 0px;
-            background-color: #008CBA;
-            padding: 10px 20px;
-            color: white;
-            border-radius: 5px;
-            transition-duration: 0.4s;
-            border: none;
-            display: inline-block;
+        input {
+        width: 540px;
         }
 
-        button:hover {
-            background-color: white;
-            color: #008CBA;
-            border-radius: 5px;
-            border: 2px solid #008CBA;
+        input:last-child {
+        width: 140px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        display: inline-block;
+        background-color: #008CBA;
+        color: white;
+        transition-duration: 0.4s;
         }
 
         .creation_commentaire {
             margin: 35px;
         }
-        <!-- Carré de saisi-->
+        
         textarea {
-
             resize: none;
             width: 400px;
             height: 100px;
@@ -156,11 +152,11 @@
                         <input type="hidden" name="post_id" value="<?php the_ID(); ?>">
                         <div>
                             <label for="comment_content"></label>
-                            <textarea name="comment_content" id="comment_content" rows=""></textarea>
+                            <textarea name="comment_content" id="comment_content" placeholder="Votre commentaire" rows="" required></textarea>
                         </div>
                         <?php wp_nonce_field('add_comment', 'add_comment_nonce'); ?>
                         <?php wp_referer_field(); ?>
-                        <button type="submit">Envoyer</button>
+                        <input type="submit" value="Envoyer">
                     </form>
                 </div>
             </div>
